@@ -238,7 +238,7 @@ def main():
         lowercase=True,
         remove_punctuation=False, # Keep punctuation for structure
         remove_stopwords=False,   # Keep stopwords for grammar
-        lemmatize=False,          # Keep original word forms
+        lemmatize=True,          # Keep original word forms
         expand_contractions=True)
         
     tokenized_corpus = []
