@@ -1,0 +1,96 @@
+############################################
+# macOS
+############################################
+.DS_Store
+.AppleDouble
+.LSOverride
+**/.DS_Store
+Icon
+._*
+
+############################################
+# Python: bytecode, caches, build artifacts
+############################################
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Packaging / distribution
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+wheels/
+
+############################################
+# Virtual environments
+############################################
+.env
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+############################################
+# Testing / coverage / tools caches
+############################################
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+
+############################################
+# Jupyter notebooks
+############################################
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+############################################
+# Editor / IDE settings
+############################################
+.vscode/
+.idea/
+
+############################################
+# Logs and temp
+############################################
+logs/
+*.log
+tmp/
+temp/
+.cache/
+
+############################################
+# ML/Experiment outputs (keep code, ignore generated artifacts)
+############################################
+runs/
+lightning_logs/
+checkpoints/
+outputs/
+artifacts/
+models/
+**/runs/
+**/lightning_logs/
+**/checkpoints/
+**/outputs/
+**/artifacts/
+
+############################################
+# Data folders commonly used locally
+# (Specific tracked files like IMDB/Human Eval CSVs remain committed)
+############################################
+data/
+datasets/

@@ -1,8 +1,0 @@
-Bigram:
-
-Smoothing
-
-Trigram: Interpolation, Smoothing algorithm
-
-Validity of UNK
-=> Folien
