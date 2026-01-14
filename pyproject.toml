@@ -34,3 +34,9 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.dependencies]
 torch = { version = ">=2.5.0", source = "pytorch" }
 
+
+[dependency-groups]
+dev = [
+    "jupyter (>=1.1.1,<2.0.0)",
+    "ipykernel (>=7.1.0,<8.0.0)"
+]
