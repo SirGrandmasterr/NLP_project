@@ -125,7 +125,7 @@ class BigramLanguageModel:
             sentence.append(next_word)
             current_word = next_word
             
-        return " ".join(sentence)
+        return " ".join(sentence[1:])
 
     def autocomplete(self, prompt, preprocessor, max_length=20):
         """
