@@ -69,6 +69,11 @@ class TextPreprocessor:
             "he'll": "he will", "she'll": "she will", "we'll": "we will", "they'll": "they will"
         }
         self.contractions_re = re.compile('(%s)' % '|'.join(self.contractions_dict.keys()))
+        
+        # Normalization Regexes
+        self.whitespace_re = re.compile(r'\s+')
+        self.apostrophe_re = re.compile(r"[’`´]")
+
 
     def _clean_html(self, text: str) -> str:
         """Removes HTML tags and unescapes HTML entities."""
@@ -91,6 +96,14 @@ class TextPreprocessor:
         # Replace punctuation with a space
         return re.sub(f'[{re.escape(string.punctuation)}]', ' ', text)
 
+    def _normalize_whitespace(self, text: str) -> str:
+        """Collapse whitespace and strip edges."""
+        return self.whitespace_re.sub(" ", text).strip()
+
+    def _normalize_apostrophes(self, text: str) -> str:
+        """Normalize fancy apostrophes to standard one."""
+        return self.apostrophe_re.sub("'", text)
+
     def process_text(self, text: str) -> Union[str, List[str]]:
         """
         Main execution method. Applies enabled steps in the logical order.
@@ -106,6 +119,10 @@ class TextPreprocessor:
         if self.remove_html:
             text = self._clean_html(text)
         
+        # 1.5 Normalization (Always good to do early)
+        text = self._normalize_apostrophes(text)
+        text = self._normalize_whitespace(text)
+
         # 2. Lowercasing
         if self.lowercase:
             text = text.lower()
